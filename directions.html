@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hellonovo — Design Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#000}
+  .band{min-height:680px;display:flex;align-items:center;padding:70px 6vw;position:relative;overflow:hidden}
+  .tab{position:absolute;top:22px;left:6vw;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:20px;z-index:5}
+  .inner{max-width:1080px;width:100%;margin:0 auto;position:relative;z-index:2}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:8px;cursor:pointer;text-decoration:none}
+
+  /* ============ DIR 1 — EDITORIAL STUDIO (light, serif, vermilion) ============ */
+  .d1{background:#F4EFE4;color:#191510}
+  .d1 .tab{background:#191510;color:#F4EFE4}
+  .d1 .eye{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#D8451F}
+  .d1 h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(40px,6.2vw,74px);line-height:1.02;letter-spacing:-.015em;margin:20px 0 22px;max-width:16ch}
+  .d1 h1 em{font-style:italic;color:#D8451F}
+  .d1 p{font-size:19px;color:#5c554a;max-width:44ch;line-height:1.6}
+  .d1 .row{margin-top:34px;display:flex;gap:16px;align-items:center}
+  .d1 .btn{background:#D8451F;color:#fff}
+  .d1 .link{font-weight:600;color:#191510;text-decoration:none;border-bottom:2px solid #D8451F;padding-bottom:2px}
+  .d1 .rule{position:absolute;right:6vw;top:0;bottom:0;width:1px;background:#d8cdb8;display:none}
+
+  /* ============ DIR 2 — BOLD GROTESK (dark, oversized, acid) ============ */
+  .d2{background:#0C0C0E;color:#F4F4F0}
+  .d2 .tab{background:#C9F24D;color:#0C0C0E}
+  .d2 .eye{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#C9F24D}
+  .d2 h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(44px,8vw,104px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase;margin:18px 0 24px;max-width:14ch}
+  .d2 h1 .u{color:#C9F24D}
+  .d2 p{font-size:19px;color:#a3a3a0;max-width:46ch}
+  .d2 .row{margin-top:34px;display:flex;gap:16px}
+  .d2 .btn{background:#C9F24D;color:#0C0C0E;border-radius:4px}
+  .d2 .btn.alt{background:transparent;color:#F4F4F0;border:1px solid #33332f}
+  .d2 .big{position:absolute;right:-2vw;bottom:-8vh;font-family:'Archivo';font-weight:900;font-size:34vh;color:#141416;line-height:1;z-index:0;letter-spacing:-.04em}
+
+  /* ============ DIR 3 — WARM PREMIUM (espresso, serif, gold) ============ */
+  .d3{background:#15110D;color:#EFE6D6}
+  .d3 .tab{background:#E3A93F;color:#15110D}
+  .d3 .glow{position:absolute;top:-20%;right:-10%;width:60%;height:120%;background:radial-gradient(closest-side,rgba(227,169,63,.14),transparent);z-index:0}
+  .d3 .eye{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#E3A93F}
+  .d3 h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(40px,6.4vw,76px);line-height:1.04;letter-spacing:-.01em;margin:20px 0 22px;max-width:15ch}
+  .d3 h1 em{font-style:italic;color:#E3A93F}
+  .d3 p{font-size:19px;color:#a99f8c;max-width:46ch;line-height:1.6}
+  .d3 .row{margin-top:34px;display:flex;gap:16px;align-items:center}
+  .d3 .btn{background:#E3A93F;color:#15110D}
+  .d3 .chip{font-family:'IBM Plex Mono';font-size:13px;color:#a99f8c;border:1px solid #362d20;border-radius:20px;padding:9px 16px}
+</style>
+</head>
+<body>
+
+<!-- DIRECTION 1 -->
+<section class="band d1">
+  <span class="tab">Direction 1 — Editorial Studio</span>
+  <div class="inner">
+    <span class="eye">hellonovo.ai</span>
+    <h1>Never miss <em>another customer.</em></h1>
+    <p>An AI front desk and a website that answer every call, text, and message, so no lead ever slips away.</p>
+    <div class="row">
+      <a href="#" class="btn">Book a free call</a>
+      <a href="#" class="link">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTION 2 -->
+<section class="band d2">
+  <span class="tab">Direction 2 — Bold Grotesk</span>
+  <div class="big">AI</div>
+  <div class="inner">
+    <span class="eye">// AI systems for local business</span>
+    <h1>Never miss <span class="u">another</span> customer.</h1>
+    <p>The AI front desk that answers every call, text, and website chat, and books the job while you work.</p>
+    <div class="row">
+      <a href="#" class="btn">Book a free call</a>
+      <a href="#" class="btn alt">See our work</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTION 3 -->
+<section class="band d3">
+  <span class="tab">Direction 3 — Warm Premium</span>
+  <div class="glow"></div>
+  <div class="inner">
+    <span class="eye">hellonovo · ai systems</span>
+    <h1>Never miss <em>another customer.</em></h1>
+    <p>We put an AI front desk on your business that answers around the clock and turns missed calls into booked jobs.</p>
+    <div class="row">
+      <a href="#" class="btn">Book a free call</a>
+      <span class="chip">Answers 24/7</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
