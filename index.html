@@ -107,14 +107,32 @@
   .about .sign{font-family:'Fraunces';font-weight:600;font-size:20px;margin-top:10px}
   .about .sign span{display:block;font-family:'Schibsted Grotesk';font-weight:600;font-size:12.5px;color:var(--ox);margin-top:5px;letter-spacing:.08em;text-transform:uppercase}
 
-  .cta{padding:110px 0;text-align:center;border-bottom:1px solid var(--line)}
-  .cta h2{font-size:clamp(36px,5vw,64px);margin-bottom:16px}
+  .cta{padding:104px 0;border-bottom:1px solid var(--line)}
+  .cta .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .cta h2{font-size:clamp(34px,4.4vw,56px);margin:16px 0 16px}
   .cta h2 em{font-style:italic;color:var(--ox)}
-  .cta p{font-size:19px;color:var(--muted);max-width:520px;margin:0 auto 30px}
-  .cta .contacts{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
-  .cta .contacts a{display:inline-flex;align-items:center;gap:10px;font-family:'Schibsted Grotesk';font-weight:500;font-size:15px;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 18px;transition:.2s}
+  .cta .lead-copy p{font-size:18px;color:var(--muted);max-width:42ch;margin-bottom:26px}
+  .cta .contacts{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+  .cta .contacts a{display:inline-flex;align-items:center;gap:11px;font-family:'Schibsted Grotesk';font-weight:500;font-size:15px;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 18px;transition:.2s;width:max-content;max-width:100%}
   .cta .contacts a:hover{border-color:var(--ox);color:var(--ox)}
   .cta .contacts a .ic{color:var(--ox)}
+
+  /* LEAD FORM CARD */
+  .lead-card{background:var(--sand-4);border:1px solid var(--line);border-radius:18px;padding:32px 30px;box-shadow:0 42px 74px -46px rgba(60,40,20,.45)}
+  .lead-card h3{font-family:'Fraunces',serif;font-weight:600;font-size:24px;font-optical-sizing:none;font-variation-settings:"opsz" 32,"SOFT" 0,"WONK" 0}
+  .lead-card .fsub{color:var(--muted);font-size:14.5px;margin:6px 0 22px}
+  .field{margin-bottom:14px;display:flex;flex-direction:column}
+  .field label{font-family:'Schibsted Grotesk';font-weight:600;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .field input,.field select,.field textarea{font-family:'Schibsted Grotesk';font-size:15px;color:var(--ink);background:var(--sand-3);border:1px solid var(--line);border-radius:9px;padding:12px 13px;width:100%;transition:.15s;-webkit-appearance:none;appearance:none}
+  .field textarea{resize:vertical;min-height:84px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ox);background:#fffdf9}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .lead-card button{width:100%;justify-content:center;margin-top:8px}
+  .lead-card button:disabled{opacity:.6;cursor:default;transform:none}
+  .fmsg{font-size:14px;font-weight:600;margin-top:13px;line-height:1.45;display:none}
+  .fmsg.ok{color:#1a7d3c}
+  .fmsg.err{color:var(--ox)}
+  .fmsg a{color:var(--ox);text-decoration:underline}
 
   footer{padding:38px 0}
   footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
@@ -129,10 +147,12 @@
     .svc-grid,.steps{grid-template-columns:1fr}
     .about .grid{gap:32px}.photo{max-width:320px;margin:0 auto}
     .sec{padding:64px 0}
+    .cta .grid{grid-template-columns:1fr;gap:40px}
   }
   @media(max-width:560px){
-    .cta .contacts{flex-direction:column;align-items:stretch}
     .stat b{font-size:30px;min-width:86px}
+    .frow{grid-template-columns:1fr}
+    .lead-card{padding:26px 22px}
   }
 </style>
 </head>
@@ -263,13 +283,72 @@
 <!-- CTA -->
 <section class="cta" id="contact">
   <div class="wrap">
-    <span class="eyebrow">Let's talk</span>
-    <h2>Stop letting customers <em>slip away.</em></h2>
-    <p>Book a free call and I'll show you exactly where you're losing leads, and what it looks like to never miss one again.</p>
-    <a href="tel:4054435546" class="btn btn-ox" style="font-size:16px;padding:16px 30px">Book a Free Call <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-    <div class="contacts">
-      <a href="tel:4054435546"><svg class="ic" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z"/></svg> (405) 443-5546</a>
-      <a href="mailto:hello@hellonovo.ai"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> hello@hellonovo.ai</a>
+    <div class="grid">
+      <div class="lead-copy">
+        <span class="eyebrow">Let's talk</span>
+        <h2>Stop letting customers <em>slip away.</em></h2>
+        <p>Tell me a little about your business and I'll show you exactly where you're losing leads, and what it looks like to never miss one again. No cost, no pressure.</p>
+        <div class="contacts">
+          <a href="tel:4054435546"><svg class="ic" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z"/></svg> (405) 443-5546</a>
+          <a href="mailto:hello@hellonovo.ai"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> hello@hellonovo.ai</a>
+        </div>
+      </div>
+
+      <!-- LEAD FORM — POSTs to Web3Forms (works on a static site, no server).
+           TO GO LIVE: visit https://web3forms.com, enter hello@hellonovo.ai, copy the free Access Key,
+           and paste it into the access_key value below (replacing YOUR_WEB3FORMS_ACCESS_KEY_HERE).
+           Until a real key is set, a submit FAILS and shows the "call me" error — it never fakes success. -->
+      <form class="lead-card" id="leadForm">
+        <h3>Book a free call</h3>
+        <p class="fsub">I'll get back to you the same day.</p>
+
+        <input type="hidden" name="access_key" value="a23b27a6-cf57-4aef-bdd9-be1d74b800d1">
+        <input type="hidden" name="subject" value="New lead from hellonovo.ai">
+        <input type="hidden" name="from_name" value="hellonovo.ai website">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important" aria-hidden="true">
+
+        <div class="frow">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="biz">Business</label>
+            <input type="text" id="biz" name="Business" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="frow">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="Phone" required autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="need">What are you after?</label>
+          <select id="need" name="Interested in">
+            <option>AI front desk (answer every call &amp; text)</option>
+            <option>A new website</option>
+            <option>Both — front desk + website</option>
+            <option>Not sure yet, let's talk</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="msg">Anything else? (optional)</label>
+          <textarea id="msg" name="Message" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-ox" id="leadSubmit">Send it over <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+
+        <p class="fmsg ok" id="formOk">Got it. Your message is on its way to me and I'll get back to you the same day.</p>
+        <p class="fmsg err" id="formErr">Sorry, that didn't send. Call or text me at <a href="tel:4054435546">(405) 443-5546</a> and I'll take care of you.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -287,6 +366,38 @@
   document.getElementById('yr').textContent=new Date().getFullYear();
   var mb=document.getElementById('menuBtn');
   if(mb)mb.addEventListener('click',function(){var n=document.querySelector('.mainnav');n.style.display=n.style.display==='flex'?'none':'flex'});
+
+  // Lead form -> Web3Forms. Success only shows on real delivery; never fakes it.
+  (function(){
+    var form=document.getElementById('leadForm');
+    if(!form)return;
+    var btn=document.getElementById('leadSubmit');
+    var ok=document.getElementById('formOk');
+    var err=document.getElementById('formErr');
+    var phone=document.getElementById('phone');
+    phone.addEventListener('input',function(){phone.setCustomValidity('')});
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      ok.style.display='none';err.style.display='none';
+      if(!form.checkValidity()){form.reportValidity();return;}
+      if(phone.value.replace(/\D/g,'').length<10){
+        phone.setCustomValidity('Please enter a valid phone number (at least 10 digits).');
+        form.reportValidity();return;
+      }
+      phone.setCustomValidity('');
+      var label=btn.innerHTML;btn.disabled=true;btn.textContent='Sending...';
+      fetch('https://api.web3forms.com/submit',{
+        method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)
+      })
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d&&d.success){ok.style.display='block';form.reset();}
+        else{err.style.display='block';}
+      })
+      .catch(function(){err.style.display='block';})
+      .finally(function(){btn.disabled=false;btn.innerHTML=label;});
+    });
+  })();
 </script>
 </body>
 </html>
